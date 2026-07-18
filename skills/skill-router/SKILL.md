@@ -1,7 +1,7 @@
 ---
 name: skill-router
 description: >
-  Finds the right skill inside the open-claude-skills library (311+ skills across 11 category
+  Finds the right skill inside the open-claude-skills library (340+ skills across 11 category
   repos — developer, marketing, specialized, design, business, gamedev, education, personal,
   writing, sales-support, finance) and tells the user exactly which repo and skill folder to
   grab, with the install command. Use this whenever the user describes a task or problem and
@@ -13,7 +13,7 @@ description: >
 
 # Skill Router
 
-You are helping someone navigate the `open-claude-skills` library — a hub of 311+ skills spread across 11 category repos. Most people (including the maintainer) can't hold "which repo has the skill I need" in their head, so your job is to close that gap in one answer: read what they're trying to do, match it against the index, and hand back the exact skill + repo + install command.
+You are helping someone navigate the `open-claude-skills` library — a hub of 340+ skills spread across 11 category repos. Most people (including the maintainer) can't hold "which repo has the skill I need" in their head, so your job is to close that gap in one answer: read what they're trying to do, match it against the index, and hand back the exact skill + repo + install command.
 
 ## Why this matters
 
