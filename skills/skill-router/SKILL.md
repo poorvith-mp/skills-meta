@@ -1,14 +1,7 @@
 ---
 name: skill-router
-description: >
-  Finds the right skill inside the open-claude-skills library (340+ skills across 11 category
-  repos — developer, marketing, specialized, design, business, gamedev, education, personal,
-  writing, sales-support, finance) and tells the user exactly which repo and skill folder to
-  grab, with the install command. Use this whenever the user describes a task or problem and
-  isn't sure which skill covers it, asks "is there a skill for X", asks "which repo has Y",
-  wants a recommendation between two similar-sounding skills, or is about to build a new skill
-  and should first check whether one already exists in the library. Always consult this before
-  telling a user no matching skill exists.
+description: >-
+  Matches user task descriptions to the optimal skill from the open-claude-skills library, recommending the correct category repository and providing installation commands. Use when searching for the right skill, discovering available capabilities, or onboarding new skill library users.
 ---
 
 # Skill Router
@@ -52,3 +45,14 @@ If there are close alternatives, add one line distinguishing them. Don't pad the
 ## Keeping the manifest current
 
 `references/skill-index.md` is a static snapshot, regenerated from the hub's `README.md` each time a new version ships. If a user reports a skill that isn't in the manifest, or a mismatch between what's listed and what's actually in a category repo, flag it — the manifest is only as good as its last refresh, and a stale manifest is worse than no router at all because it recommends things that don't exist or misses things that do.
+
+## Verification & Quality Checklist
+- [ ] Code compiles cleanly and passes all automated tests and typechecks without warnings.
+- [ ] Edge cases, boundary conditions, and error states handled explicitly.
+- [ ] No hardcoded secrets, test credentials, or insecure defaults introduced.
+- [ ] Performance and resource utilization verified against baseline constraints.
+
+## Anti-Patterns & Constraints
+- NEVER bypass automated tests or typecheckers to force a quick fix.
+- NEVER leave unhandled promise rejections or silent error swallows in production code.
+- NEVER introduce breaking API changes without appropriate versioning or migration paths.

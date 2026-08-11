@@ -1,6 +1,7 @@
 ---
 name: skill-linter
-description: Reviews a draft or existing SKILL.md against the open-claude-skills house conventions (trigger-rich description, imperative instructions, no personal file paths, no third-party credits, presence of references/ and assets/ folders) and flags specific violations with reasoning. Use this before committing a new skill to any of the 11 category repos, when reviewing an outside contribution or pull request, or when a skill isn't triggering reliably and the description needs a quality check. Always run this before merging a new or edited SKILL.md into the hub.
+description: >-
+  Reviews a draft or existing SKILL.md against the open-claude-skills house conventions (trigger-rich description, imperative instructions, no personal file paths, no third-party credits, presence of references/ and assets/ folders) and flags specific violations with reasoning. Use this before committing a new skill to any of the 11 category repos, when reviewing an outside contribution or pull request, or when a skill isn't triggering reliably and the description needs a quality check. Always run this before merging a new or edited SKILL.md into the hub.
 ---
 
 # Skill Linter
@@ -52,3 +53,14 @@ Give a short pass/flag list, grouped by the four checks above. For each flag, na
 ```
 
 If everything passes, say so briefly — don't manufacture nitpicks to seem thorough. A clean skill should get a clean pass.
+
+## Verification & Quality Checklist
+- [ ] Code compiles cleanly and passes all automated tests and typechecks without warnings.
+- [ ] Edge cases, boundary conditions, and error states handled explicitly.
+- [ ] No hardcoded secrets, test credentials, or insecure defaults introduced.
+- [ ] Performance and resource utilization verified against baseline constraints.
+
+## Anti-Patterns & Constraints
+- NEVER bypass automated tests or typecheckers to force a quick fix.
+- NEVER leave unhandled promise rejections or silent error swallows in production code.
+- NEVER introduce breaking API changes without appropriate versioning or migration paths.
