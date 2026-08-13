@@ -68,3 +68,9 @@ If everything passes, say so briefly — don't manufacture nitpicks to seem thor
 - NEVER invent statistics, quotes, or sources.
 - NEVER present an unverified figure as sourced.
 - NEVER bury the central point below preamble the reader will not reach.
+
+## References
+
+Load these only when the task needs them:
+
+- [references/house-conventions.md](references/house-conventions.md)
