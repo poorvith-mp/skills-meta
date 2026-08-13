@@ -1,7 +1,7 @@
 {
   "name": "skills-meta",
   "displayName": "Meta Skills",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "3 meta skills. Skills that operate on the skill library itself: routing, linting and curation.",
   "author": {
     "name": "Poorvith M P",
