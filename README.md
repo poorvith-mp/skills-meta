@@ -1,6 +1,6 @@
 # skills-meta
 
-Meta skills collection for Claude Code, Antigravity IDE, and Claude.ai — part of [open-claude-skills](https://github.com/prvthmpcypher/open-claude-skills).
+Meta skills collection for Claude Code, Antigravity IDE, and Claude.ai — part of [skillary](https://github.com/prvthmpcypher/skillary).
 
 - Version: **v2.0**
 - Total skills: **3**

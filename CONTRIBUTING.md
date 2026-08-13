@@ -5,7 +5,7 @@ Maintainer: **Poorvith M P** · v0.1 · last updated July 2026
 ## What belongs here
 
 `skills-meta` is different from the other 11 category repos: skills here operate on the
-**open-claude-skills library itself** (routing, linting, house-style checks), not on an
+**skillary library itself** (routing, linting, house-style checks), not on an
 external domain like marketing or finance. Only add a skill here if it is about
 maintaining, navigating, or quality-checking the library.
 
