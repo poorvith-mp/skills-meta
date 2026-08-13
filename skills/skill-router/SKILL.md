@@ -1,7 +1,9 @@
 ---
 name: skill-router
 description: >-
-  Matches user task descriptions to the optimal skill from the open-claude-skills library, recommending the correct category repository and providing installation commands. Use when searching for the right skill, discovering available capabilities, or onboarding new skill library users.
+  Finds the right skill for a described task across the 12 category repos and gives the install
+  command. Use when you know the task but not the skill name, or when checking whether a skill
+  already exists before writing one.
 ---
 
 # Skill Router

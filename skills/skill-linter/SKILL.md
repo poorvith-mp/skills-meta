@@ -1,7 +1,9 @@
 ---
 name: skill-linter
 description: >-
-  Reviews a draft or existing SKILL.md against the open-claude-skills house conventions (trigger-rich description, imperative instructions, no personal file paths, no third-party credits, presence of references/ and assets/ folders) and flags specific violations with reasoning. Use this before committing a new skill to any of the 11 category repos, when reviewing an outside contribution or pull request, or when a skill isn't triggering reliably and the description needs a quality check. Always run this before merging a new or edited SKILL.md into the hub.
+  Checks a draft SKILL.md against house conventions: description under 250 chars with a real
+  trigger, domain-appropriate checklist, no stub text. Use when writing or reviewing a skill
+  before committing it.
 ---
 
 # Skill Linter

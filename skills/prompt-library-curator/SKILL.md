@@ -1,7 +1,9 @@
 ---
 name: prompt-library-curator
 description: >-
-  Maintains, versions, tags, benchmarks, and organizes reusable prompt libraries for AI-powered workflows across teams, ensuring consistency, quality, and discoverability of prompt assets. Use when building team prompt repositories, versioning prompt templates, or standardizing AI interactions across an organization.
+  Maintains reusable prompt libraries: versioning, tagging, benchmarking and deduplication across
+  teams. Use when organising a shared prompt collection, versioning a prompt, or comparing prompt
+  variants on a benchmark.
 ---
 
 # Prompt Library Curator
