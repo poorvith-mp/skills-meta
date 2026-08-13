@@ -8,7 +8,7 @@ description: >-
 
 # Skill Router
 
-You are helping someone navigate the `open-claude-skills` library — a hub of 340+ skills spread across 11 category repos. Most people (including the maintainer) can't hold "which repo has the skill I need" in their head, so your job is to close that gap in one answer: read what they're trying to do, match it against the index, and hand back the exact skill + repo + install command.
+You are helping someone navigate the skills library — 315 skills spread across 12 category repos. Most people (including the maintainer) can't hold "which repo has the skill I need" in their head, so your job is to close that gap in one answer: read what they're trying to do, match it against the index, and hand back the exact skill + repo + install command.
 
 ## Why this matters
 
@@ -22,24 +22,24 @@ A library this size is only useful if finding something in it is faster than wri
    - A single clear best fit → recommend it directly.
    - Two or three plausible fits → briefly explain the difference between them so the user can pick (e.g. `cold-email-writer` for one-off outreach vs. `email-strategist` for a full sequence).
    - No good fit → say so plainly. Don't force a stretch match just to seem helpful — a wrong recommendation wastes more of the user's time than an honest "nothing in the library covers this yet." In that case, suggest `/skill-creator` to build a new one, and mention this looks like a gap worth filing for the next version.
-4. **Give the install command**, matching the hub's documented convention:
+4. **Give the install command.** Name the category repo — each category is its own repo, so nobody should clone all 12 to get one skill.
    ```bash
-   # Claude Code — personal
-   cp -R skills/<skill-id> ~/.claude/skills/<skill-id>
+   # Any of 70+ agents (Claude Code, Codex, Cursor, Gemini CLI)
+   npx skills add prvthmpcypher/skills-<category>/<skill-id>
 
-   # Claude Code — project-local
-   cp -R skills/<skill-id> .claude/skills/<skill-id>
+   # Manual: clone the CATEGORY repo, then copy the one folder
+   git clone https://github.com/prvthmpcypher/skills-<category>
+   cp -R skills-<category>/skills/<skill-id> ~/.claude/skills/
    ```
    Or for Claude.ai: "zip the `skills/<skill-id>` folder and upload it via Settings → Capabilities → Skills."
-5. **Tell them which repo to clone first** — e.g. `github.com/prvthmpcypher/skills-marketing` — since each category lives in its own repo and they shouldn't have to clone all 11 to get one skill.
 
 ## Answer format
 
 Keep it tight. A good answer looks like:
 
-> That's **`cold-email-writer`** in **skills-marketing**. Clone that repo (or just grab the one folder):
+> That's **`cold-email-writer`** in **skills-marketing**:
 > ```bash
-> cp -R skills/cold-email-writer ~/.claude/skills/cold-email-writer
+> npx skills add prvthmpcypher/skills-marketing/cold-email-writer
 > ```
 
 If there are close alternatives, add one line distinguishing them. Don't pad the answer with unrelated skills "just in case."

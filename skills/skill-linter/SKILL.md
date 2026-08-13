@@ -21,6 +21,9 @@ Read the full SKILL.md and any bundled `references/` or `assets/` files, then go
 ### 1. Frontmatter
 - **`name`** matches the folder name exactly.
 - **`description`** is trigger-rich, not just a restatement of the title. It should read like it's answering "when should Claude reach for this?" — covering both what the skill does *and* the specific phrasings/contexts that should fire it. A description that only says what the skill does (e.g. "Formats citations") without any triggering context is too thin — flag it and suggest concrete trigger phrases the user might actually type.
+- **Under 250 characters. This is the one that matters most.** Claude truncates the description in the skill listing at roughly 250 chars, so anything past that is invisible when it is deciding whether to load the skill. A trigger clause sitting at the end of a 400-character description does nothing at all. Structure: capability first, then the concrete triggers, all inside the limit.
+- **The trigger must not restate the skill's own name.** "Use when the user asks about tax strategist" matches nothing a real person types — they describe a task, not a skill name. Flag any trigger that just echoes the title.
+- **If the skill overlaps another, it must name it.** A line like "Not for valuation — use `financial-analyst`" is what stops two similar skills competing for the same request. Without it, whichever fires first is arbitrary.
 - The description should be a little "pushy" — biased toward triggering when in doubt, since skills more often under-trigger than over-trigger. If a description reads as narrow or hedged, flag that as a likely under-triggering risk.
 
 ### 2. Body instructions
@@ -35,9 +38,19 @@ Read the full SKILL.md and any bundled `references/` or `assets/` files, then go
 - Nothing that resembles malicious intent (exfiltration, unauthorized access, credential harvesting) — a hard fail, no exceptions.
 
 ### 4. Folder structure
-- `SKILL.md` present at the skill's root.
-- `references/` present if the skill leans on any lookup content (formats, schemas, domain variants) — even a single `NOTE.md` placeholder is acceptable if there's genuinely nothing to reference yet, but flag if there's clearly reference-worthy content still sitting in the SKILL.md body that should be split out.
-- `assets/` present if the skill produces file-based output (templates, boilerplate, starter files) — otherwise a placeholder `NOTE.md` explaining there's no asset need is fine.
+- `SKILL.md` present at the skill's root, and `name` matching the folder name.
+- `references/` only if there is genuine lookup content to split out. Do **not** ask for placeholder files — an empty `references/` or `assets/` folder is worse than none.
+- **Every file in `references/` must be linked from the body.** Agents load reference files only when SKILL.md points at them, so an unlinked reference can never be read.
+- No committed build artifacts (`*.skill` zips) inside the skill folder.
+
+### 5. Run the validator
+The mechanical checks above are enforced by `scripts/validate.py` in the hub repo. Run it rather than eyeballing them:
+
+```bash
+python scripts/validate.py --repo <category>
+```
+
+Review the things a script cannot judge: whether the description's triggers match how someone would actually phrase the request, whether the instructions are specific enough to act on, and whether the skill overlaps an existing one without saying so.
 
 ## Output format
 

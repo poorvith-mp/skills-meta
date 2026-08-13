@@ -1,15 +1,46 @@
-# open-claude-skills house conventions (v0.2)
+# House conventions
 
-Source of truth: the hub `README.md`. Reproduced here so the linter has it in context without re-fetching the README every run.
+Enforced mechanically by `scripts/validate.py` in the hub repo. Run it rather
+than checking these by hand; this file exists so the linter can explain *why* a
+rule exists when it flags something.
 
 ```
 skill-id/
-├── SKILL.md
-├── references/NOTE.md   (or real reference files)
-└── assets/NOTE.md        (or real asset files)
+├── SKILL.md          required; `name` must match the folder name
+├── references/       optional; only if there is real lookup content
+├── scripts/          optional; executable helpers
+└── assets/           optional; templates, schemas, fixtures
 ```
 
-- Trigger-rich `description` frontmatter — err toward "pushy" wording that biases the model toward triggering when the task genuinely matches, since under-triggering is the more common failure mode.
-- Imperative instructions in the body.
-- No third-party credits or personal file paths baked into any skill.
-- Keep SKILL.md under ~500 lines; push detail into `references/` past that.
+Do not create placeholder files to fill these folders. An empty `references/`
+is worse than no `references/`.
+
+## Description
+
+- **Under 250 characters.** Claude truncates the description in the skill
+  listing at roughly that point, so anything past it is invisible at the moment
+  the skill is being chosen. A trigger clause at the end of a 400-character
+  description does nothing.
+- **Capability first, triggers second**, both inside the limit.
+- **Never trigger on the skill's own name.** People describe tasks, not skill
+  ids. "Use when the user asks about tax strategist" matches nothing.
+- **Name the sibling when two skills overlap.** "Not for valuation — use
+  `financial-analyst`" is what stops them competing for one request.
+
+## Body
+
+- Imperative instructions, explaining the why behind non-obvious steps.
+- Opens with an H1 naming the skill.
+- Under ~500 lines; push detail into `references/`.
+- **Every file in `references/` must be linked from the body.** Agents load
+  reference files only when SKILL.md points at them, so an unlinked reference
+  can never be read.
+- Verification checklist and anti-patterns must match the skill's domain. The
+  archetypes live in `taxonomy/checklists.yaml` in the hub repo — a finance
+  skill checks that figures reconcile, not that code compiles.
+
+## Never
+
+- Personal file paths, usernames, machine-specific config, or private URLs.
+- Third-party credits or "built by X" content.
+- Committed build artifacts (`*.skill` zips) inside the skill folder.
