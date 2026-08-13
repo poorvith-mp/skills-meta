@@ -47,12 +47,14 @@ If there are close alternatives, add one line distinguishing them. Don't pad the
 `references/skill-index.md` is a static snapshot, regenerated from the hub's `README.md` each time a new version ships. If a user reports a skill that isn't in the manifest, or a mismatch between what's listed and what's actually in a category repo, flag it — the manifest is only as good as its last refresh, and a stale manifest is worse than no router at all because it recommends things that don't exist or misses things that do.
 
 ## Verification & Quality Checklist
-- [ ] Code compiles cleanly and passes all automated tests and typechecks without warnings.
-- [ ] Edge cases, boundary conditions, and error states handled explicitly.
-- [ ] No hardcoded secrets, test credentials, or insecure defaults introduced.
-- [ ] Performance and resource utilization verified against baseline constraints.
+
+- [ ] Every factual claim and statistic traced to a citable source.
+- [ ] Reading level and terminology matched to the stated audience.
+- [ ] Length and formatting fit the destination channel's limits.
+- [ ] One clear call to action, placed where the reader will still be reading.
 
 ## Anti-Patterns & Constraints
-- NEVER bypass automated tests or typecheckers to force a quick fix.
-- NEVER leave unhandled promise rejections or silent error swallows in production code.
-- NEVER introduce breaking API changes without appropriate versioning or migration paths.
+
+- NEVER invent statistics, quotes, or sources.
+- NEVER present an unverified figure as sourced.
+- NEVER bury the central point below preamble the reader will not reach.
