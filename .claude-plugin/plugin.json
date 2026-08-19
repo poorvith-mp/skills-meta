@@ -5,10 +5,10 @@
   "description": "3 meta skills. Skills that operate on the skill library itself: routing, linting and curation.",
   "author": {
     "name": "Poorvith M P",
-    "url": "https://github.com/prvthmpcypher"
+    "url": "https://github.com/poorvith-mp"
   },
-  "homepage": "https://github.com/prvthmpcypher/skillary",
-  "repository": "https://github.com/prvthmpcypher/skills-meta",
+  "homepage": "https://github.com/poorvith-mp/skillary",
+  "repository": "https://github.com/poorvith-mp/skills-meta",
   "license": "MIT",
   "keywords": [
     "meta",
