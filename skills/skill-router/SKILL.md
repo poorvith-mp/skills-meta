@@ -25,10 +25,10 @@ A library this size is only useful if finding something in it is faster than wri
 4. **Give the install command.** Name the category repo — each category is its own repo, so nobody should clone all 12 to get one skill.
    ```bash
    # Any of 70+ agents (Claude Code, Codex, Cursor, Gemini CLI)
-   npx skills add prvthmpcypher/skills-<category>/<skill-id>
+   npx skills add poorvith-mp/skills-<category>/<skill-id>
 
    # Manual: clone the CATEGORY repo, then copy the one folder
-   git clone https://github.com/prvthmpcypher/skills-<category>
+   git clone https://github.com/poorvith-mp/skills-<category>
    cp -R skills-<category>/skills/<skill-id> ~/.claude/skills/
    ```
    Or for Claude.ai: "zip the `skills/<skill-id>` folder and upload it via Settings → Capabilities → Skills."
@@ -39,7 +39,7 @@ Keep it tight. A good answer looks like:
 
 > That's **`cold-email-writer`** in **skills-marketing**:
 > ```bash
-> npx skills add prvthmpcypher/skills-marketing/cold-email-writer
+> npx skills add poorvith-mp/skills-marketing/cold-email-writer
 > ```
 
 If there are close alternatives, add one line distinguishing them. Don't pad the answer with unrelated skills "just in case."
